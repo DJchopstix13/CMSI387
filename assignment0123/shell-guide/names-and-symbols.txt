@@ -9,6 +9,8 @@ Names and Symbols Guide:
 2) PATH: environmental variable that tells which directories to search for executable programs based on what the user types in (e.g. running javac will run Java's parser generator)
 
 3) ~: leads you back to the home directory
+# JD: Strictly speaking, it *represents* your home directory.  Whether it "leads
+#     you back" there depends on how you use it.
 
 4) &&: run 2 commands ONLY if commands are true
 
