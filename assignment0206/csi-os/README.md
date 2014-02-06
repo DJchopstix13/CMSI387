@@ -1,13 +1,15 @@
 Jonathan Piatos
 CMSI387: Operating System
-CSI- OS
 
-README.md:
-==========
+README for CSI- OS:
+===================
 
 - Windows: 
-    - NOTE: windows-kernel.jpg and windows-pre-os-process.jp came from Geoff, `ThatHalfKorean`  
-    - The Pre- OS process on Windows is essentially the BIOS screen
+    - NOTE: windows-kernel.jpg and windows-pre-os-process.jpg came from Geoff, `ThatHalfKorean`  
+    - All my imagefiles display the command and results needed
 
 - Mac:
+    - All my image files display the command and results needed
+    
 - Linux (aka Ubuntu)
+    - All my files display the command and results needed
