@@ -1,6 +1,3 @@
-Jonathan Piatos
-CMSI387: Operating System
-
 README for CSI- OS:
 ===================
 
