@@ -20,5 +20,6 @@ int main(int argc, char *argv[]) {
   syscall(116, &result);
 
   // Display some of the returned RAM information.
-  printf("Total RAM: %ld, free RAM: %ld\n", result.totalswap, result.bufferram);
+
+  printf("Free Swap: %ld, Buffer RAM: %ld\n", result.freeswap, result.bufferram);
 }
