@@ -5,16 +5,18 @@
 ** "Kill" system call (37) using the syscall function.
 */
 
-#include <string.h>
+#include <signal.h>
+#include <linux/kernel.h>
 
 
 int main(int argc, char *argv[]){
     
-    int kill(pid_t pid, int sig); 
+    struct pid
 
-    if (/* condition */)
-    {
-    	/* code */
+    syscall(37, argv[1], sig);
+
+    if (pid >= 1){
+    	
     }
 
     syscall(37);

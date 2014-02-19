@@ -12,6 +12,7 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
+
     // The sysinfo structure is in kernel.h.
     struct sysinfo result;
     
