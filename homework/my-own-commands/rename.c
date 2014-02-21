@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
         syscall(4, 2, errorMessage, strlen(errorMessage));
     } else if (result == 0) {
         char *completionMessage = "This renaming is right\n";
-        syscall(4, 2, errorMessage, strlen(errorMessage));
+        syscall(4, 2, completionMessage, strlen(completionMessage));
     }
 
 }
