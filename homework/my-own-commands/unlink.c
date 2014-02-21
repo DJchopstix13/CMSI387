@@ -1,8 +1,13 @@
-/* Jonathan Piatos
+/* 
+**
 ** CMSI387: Operating System
 ** unlink.c
+**
 ** Description: This program implements the 
 ** "unlink" system call (10) using the syscall function.
+**
+** Contributions made by Abdul Alzaid, Carlos Agudo, and Jonathan Piatos
+**
 */
 
 #include <stdio.h>

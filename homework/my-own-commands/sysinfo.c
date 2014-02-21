@@ -1,8 +1,13 @@
-/* Jonathan Piatos
+/* 
+**
 ** CMSI387: Operating System
 ** rename.c
+**
 ** Description: This program demonstrates invocation of the sysinfo
-** system call (116) using the syscall function.  
+** system call (116) using the syscall function. 
+**
+** Contributions made by Abdul Alzaid, Carlos Agudo, and Jonathan Piatos
+** 
 */
 
 #include <linux/kernel.h>
