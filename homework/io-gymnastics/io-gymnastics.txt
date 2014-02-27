@@ -1,0 +1,23 @@
+# JD: For your screen exercise, I generally see what you did but you could
+#     have chosen better screenshots.  For example, how do I know what you
+#     did when you first launched screen?  How do I know what progress your
+#     program made?  At least you could have modified your recursiveFib program
+#     to produce some output, so it is clear that it was doing some work while
+#     you were away.
+#
+#     At any rate, I still do think you did this successfully; just didn't
+#     document it very well.
+
+# JD: For finding the directory taking up the most space, you did hit upon
+#     the right *initial* command (du -d 1 -h) but observe that you still have
+#     to scan the result to get the directory that uses the most room.  Here is
+#     another case where you have not taken automation to its full potential.
+#     You need a few more commands to (a) make it super easy to locate the
+#     directory that takes the most space and (b) filter the results so that
+#     you only get that information and no extras.  Between the two, (a) is
+#     more important than (b).  It wouldn't have been so bad if you did (a)
+#     but not (b).  However, you did neither.
+
+# JD: For the mounted devices, you did get an appropriate command (diskutil),
+#     but just note that this command is Mac OS X-specific.  mount and df are
+#     the more platform-independent Unix equivalents.

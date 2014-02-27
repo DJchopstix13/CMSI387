@@ -2,5 +2,13 @@ Jonathan Piatos
 CMSI387: Operating Systems:
 
 
+# JD: For #3, you used top, which has an interactive element that circumvents
+#     what we were getting at with these command exercises.  If you use top,
+#     you have to hit the right keys every time.  Therefore using top is not
+#     automatable or scriptable.  You do not get the answer you want right away.
+#     This is not the same as "making the computer do as much work as possible."
 
 
+# JD: For #4, you used ps -d, where -d, according to the man page, selects all
+#     processes except for "session leaders."  What's a "session leader?"  Are
+#     you sure that is the same as "all users except root and yourself?"
