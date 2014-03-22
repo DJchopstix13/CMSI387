@@ -1,7 +1,11 @@
 Jonathan Piatos
 CMSI387: Operating Systems:
 
+# Updates to Process Gymnastics:
 
+# JP: Dondi, I fixed #3 and 4... see the new images
+
+# Feedback on Original 2/06 Assignment:
 # JD: For #3, you used top, which has an interactive element that circumvents
 #     what we were getting at with these command exercises.  If you use top,
 #     you have to hit the right keys every time.  Therefore using top is not
