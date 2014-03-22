@@ -3,7 +3,7 @@
 ** CMSI387: Operating System
 ** access.c
 **
-** Description: TThis program demonstrates invocation of the access
+** Description: TThis program demonstrates invocation of the access 
 ** system call (33) using the syscall function.
 **
 ** Contributions made by Abdul Alzaid, Carlos Agudo, and Jonathan Piatos
@@ -23,8 +23,12 @@ int main(int argc, char *argv[]) {
     int result = syscall(33, argv[1], R_OK);
 
     if (result == 0) {
-    	//message used simply for testing the syscall
-        char *successMessage = "Read Access is Granted\n";
+
+        char *successMessage = "User Access Available\n";
         syscall(4, 2, successMessage, strlen(successMessage));
+    } else if (result == -1) {
+        char *failureMessage = "User Access Unavailable\n";
+        syscall(4, 2, failureMessage, strlen(failureMessage));
     }
+
 }

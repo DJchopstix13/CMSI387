@@ -16,7 +16,6 @@
 
 int main(int argc, char *argv[]) {
 
-    
     int result = syscall(38, argv[1], argv[2]);
     
     //messages are used to see if syscall worked or not

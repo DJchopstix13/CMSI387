@@ -19,10 +19,10 @@ int main(int argc, char *argv[]) {
     int result = syscall(9, argv[1], argv[2]);
     
     if (result == -1) {
-        char *errorMessage = "This renaming is wrong\n";
+        char *errorMessage = "The file unsuccessfully linked to the name\n";
         syscall(4, 2, errorMessage, strlen(errorMessage));
     } else if (result == 0) {
-        char *completionMessage = "This renaming is right\n";
+        char *completionMessage = "The file successfully linked to the name\n";
         syscall(4, 2, completionMessage, strlen(completionMessage));
     }
 }

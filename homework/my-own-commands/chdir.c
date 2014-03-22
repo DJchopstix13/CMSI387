@@ -22,6 +22,9 @@ int main(int argc, char *argv[]) {
     if (result == -1) {
         syscall(4, 2, errorMessage, strlen(errorMessage));
     } else if (result == 0) {
+        // JD: Because this new directory is lost upon exiting this program,
+        //     it would have been nice to also show where the user ended up
+        //     with a pwd system call, before exiting.
         syscall(4, 2, successMessage, strlen(successMessage));
     }
 }

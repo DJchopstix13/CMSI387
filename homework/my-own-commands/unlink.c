@@ -19,7 +19,7 @@
 
 int main(int argc, char *argv[]){
 
-    int result = syscall(10, argv[1], R_OK);
+    int result = syscall(10, argv[1]);
 
     if (result == 0) {
         //message used simply for testing the syscall
