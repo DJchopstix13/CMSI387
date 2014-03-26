@@ -32,9 +32,13 @@ Use long-running invocations (i.e., huge numbers) of the `thread-java` and/or `t
 I used the Sum.java program once with large numbers for input. 
 
 The main difference between Mac and Ubuntu is how the threads are visually represented
-differently:
+differently.
+
+Mac OS-X:
 
     Mac OS-X displays the threads under the CPU tab in the Activity monitor, where users can sort an order of the threads by selecting the headers to order the threads. Users can also view the number threads being used.  
+
+Ubuntu:
 
     Ubuntu displays all the threads as separate lines in an ascending ordering, but then still gives them the same process ID and does not show a total number of threads like Mac. 
 
