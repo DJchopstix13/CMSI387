@@ -8,10 +8,9 @@ this assignment?
 
 2. Can your shell run scripts? Why or why not? 
 
-    My shell does not run scripts because it only knows how to handle certain executable 
-    commands (e.g. `ls`, `ping`).
+    My shell can run scripts.  It can even run the interactive shells that are built into my kernel.  
 
 3. Does Ctrl-D exit your shell? Why or why not? 
     
-    Ctrl-D` exits my shell because the while loop keeps going until an `EOF`
+    Ctrl-D` exits my shell because the do-while loop keeps going until an `EOF`
 	character is found.
