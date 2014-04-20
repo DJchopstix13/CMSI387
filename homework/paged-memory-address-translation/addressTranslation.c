@@ -2,7 +2,6 @@
  * Implementation of the software paging unit.
  */
 #include "addressTranslation.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,5 +12,10 @@ void setPageTable(pagetable *pt) {
 }
 
 int getPhysical(int logical) {
-    // TODO
+
+	int leftBits = ((logical & PAGEMASK) >> PAGEBITS);
+	int rightBits = (logical & PAGESIZE);
+
+    return (((ptr[leftBits].frame) << PAGEBITS) + rightBits);
+
 }
