@@ -1,0 +1,61 @@
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# dd if=/dev/zero of=image count=1024
+1024+0 records in
+1024+0 records out
+524288 bytes (524 kB) copied, 0.0168586 s, 31.1 MB/s
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# mke2fs image
+mke2fs 1.42 (29-Nov-2011)
+image is not a block special device.
+Proceed anyway? (y,n) y
+Discarding device blocks: done                            
+Filesystem label=
+OS type: Linux
+Block size=1024 (log=0)
+Fragment size=1024 (log=0)
+Stride=0 blocks, Stripe width=0 blocks
+64 inodes, 512 blocks
+25 blocks (4.88%) reserved for the super user
+First data block=1
+Maximum filesystem blocks=524288
+1 block group
+8192 blocks per group, 8192 fragments per group
+64 inodes per group
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Writing superblocks and filesystem accounting information: done
+
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# mkdir diskimage
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# mount -o loop -o nosuid -o nodev image diskimage
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# df diskimage/
+Filesystem     1K-blocks  Used Available Use% Mounted on
+/dev/loop0           499    15       459   4% /home/jon/CMSI387/homework/csi-fs/diskimage
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# cd diskimage/
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# gedit test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# mkdir test-dir
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# cd test-dir/
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage/test-dir# gedit test2.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage/test-dir# ln -s /home/jon/CMSI387/homework/csi-fs/
+diskimage/ image      
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage/test-dir# ln -s /home/jon/CMSI387/homework/csi-fs/diskimage/test.txt 
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage/test-dir# cd ..
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ln /home/jon/CMSI387/homework/csi-fs/diskimage/test-dir/test 
+test2.txt  test.txt   
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ln /home/jon/CMSI387/homework/csi-fs/diskimage/test-dir/test 
+test2.txt  test.txt   
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ln /home/jon/CMSI387/homework/csi-fs/diskimage/test-dir/test2.txt 
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ls
+lost+found  test2.txt  test-dir  test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ls -a
+.  ..  lost+found  test2.txt  test-dir  test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ls -l
+total 15
+drwx------ 2 root root 12288 Apr 27 22:51 lost+found
+-rw-r--r-- 2 root root    24 Apr 27 22:52 test2.txt
+drwxr-xr-x 2 root root  1024 Apr 27 22:53 test-dir
+-rw-r--r-- 1 root root    13 Apr 27 22:52 test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ls -i
+11 lost+found  14 test2.txt  13 test-dir  12 test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# ls -F
+lost+found/  test2.txt  test-dir/  test.txt
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs/diskimage# cd ..
+root@djchopstix13:/home/jon/CMSI387/homework/csi-fs# hexdump -C image
