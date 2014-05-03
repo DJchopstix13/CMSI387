@@ -16,6 +16,8 @@
 ##Further comments on Dijkstra's concurrent programming control problem
 ####Murray A. Eisenberg and Michael R. McGuire
 
+> JD: This one is missing full citation information, unlike the others.
+
 *Connection to Other Work*
 ***
 This article is connected to our small collection because Murray A. Eisenberg and Michael R. McGuire are directly commenting on Djikstra's concurrent programming control problem. Both authors discuss the solution that Djikstra provided and also expand upon the the comments that  Knuth made upon that provided solution.
