@@ -18,6 +18,9 @@
  * store string into an array
  *
  */
+// JD: Good for you that you defined this function, but that name...although
+//     it is accurate, it does not at all sound like function names that you
+//     have seen in our sample code.
 int tokening_input (char *command, char *arg[]) {
     
     //initialize index and delimeter
@@ -25,6 +28,7 @@ int tokening_input (char *command, char *arg[]) {
     char *delimeter = " \n";
 
     //handles strtok parsing
+    // JD: Well of course this handles strtok parsing...you're calling strtok!
     char *arguments = strtok(command, delimeter);
 
     while (arguments != NULL) {
@@ -53,7 +57,7 @@ int main() {
         //Displays current directory
         char directory[DIR_SIZE];
         getcwd(directory, sizeof(directory));
-        printf("Enter your command: ", directory);        
+        printf("Enter your command: ", directory); // JD: Missing a placeholder for directory.
 
         fgets(command, sizeof(command), stdin);
 
@@ -71,6 +75,9 @@ int main() {
             tokening_input(command, arg);
         
             //Checks "cd" command
+            // JD: Your linebreak choices are somewhat inconsistent.  For example, why are
+            //     there blank lines surrounding the chdir call here, but in the if statement
+            //     above you don't have line breaks?
             if (strcmp("cd", arg[0]) == 0) {
                 
                 chdir(arg[1]);
@@ -78,6 +85,9 @@ int main() {
             } 
 
             //Checks for secret-system-call
+            // JD: This linebreak I sort of understand, because you inserted the above comment.
+            //     But then again, why insert the above comment---the string comparison for
+            //     "secret-system-call" is kind of self-explanatory, no?
             else if (strcmp("secret-system-call", arg[0]) == 0) { 
                 
                 long int call = syscall(351);
