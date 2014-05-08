@@ -1,3 +1,8 @@
+// JD: This is a no-no---concatenating everything into a single file just
+//     because you aren't able to figure out multiple-file compilation is
+//     completely not an option.  In fact, the evil of this approach is
+//     apparent in this very file: note how the version you have here does
+//     not have the error and validity check.  KABOOM.
 /**
  * Implementation of the software paging unit.
  */

@@ -16,8 +16,11 @@ void setPageTable(pagetable *pt) {
 int getPhysical(int logical) {
 
 	int leftBits = ((logical & PAGEMASK) >> PAGEBITS);
+    // JD: Note how you don't need the "&" because you are shifting right.
 	int rightBits = (logical & PAGESIZE);
 
+    // JD: You can unhardcode the max check right here through
+    //     proper usage of the #define's.
 	if (logical < 0 || logical >= 256) {
         return ERR_OUT_OF_RANGE;
     }
@@ -28,4 +31,11 @@ int getPhysical(int logical) {
 
     return (((ptr[leftBits].frame) << PAGEBITS) + rightBits);
 
+    // JD: So how is it that you have this nice, generally working version
+    //     of the program side by side with a monolithic, broken version?
+    //     If you eventually figured out multiple-file compilation, then
+    //     you should have ditched the other program.
+    //
+    //     If you really had to go single-file, then you should have deleted
+    //     all the other side files.
 }

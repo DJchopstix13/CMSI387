@@ -22,8 +22,13 @@ int chopstick_state[NUM];
 pthread_mutex_t chopsticks[NUM];
 
 void philosopherActions () {
+    pthread_mutex_unlock(&display);
 	int i;
-
+    // JD: This is definitely output but if you think about it it isn't
+    //     as useful as it could be.  Better to provide a "snapshot" of
+    //     the table, so we can tell if two adjacent philosophers are
+    //     eating.  Granularity-wise, it would be good to also show
+    //     chopstick states.
 	for (i = 0; i < NUM; i++) {
 		if (philosopher_state[i] == THINKING) {
 			printf(" Philosopher is Thinking ");
@@ -51,10 +56,14 @@ int randomWait(int bound) {
 
 void getChopstick (int chopstick) {
 	pthread_mutex_lock(&chopsticks[chopstick]);
+    // JD: This is where you would put a sanity check asserting that
+    //     the chopstick you are about to pick up is indeed available.
 	chopstick_state[chopstick] += 1;
 }
 
 void releaseChopstick (int chopstick) {
+    // JD: Change chopstick state first, and *then* release it.
+    //     (and of course assert that it really isn't available
 	pthread_mutex_unlock(&chopsticks[chopstick]);
 	chopstick_state[chopstick] -= 1;
 }
@@ -80,7 +89,9 @@ void finishedEating (int philosopher) {
 
 void* philosophize (void* philosopher) {
 	int id = *(int*) philosopher;
+    // JD: Without a lock, you run the risk of overlapping output.
 	philosopherActions();
+    // JD: Bleecccccch, tabs?????  'Nuff said.
 	while (TRUEVALUE) {
 			philosopherActions();
 
